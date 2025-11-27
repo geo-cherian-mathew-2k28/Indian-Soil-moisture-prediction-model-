@@ -1,107 +1,90 @@
-💧 AgroTechz: AI-Powered Soil Moisture Predictor
+**AgroTechz: AI-Powered Soil Moisture Predictor**
+****Project Overview****
 
-🎯 Project Overview
-
-This project implements a machine learning model to predict the Average Soil Moisture Level (at 15cm) based on geographical, temporal, and related soil moisture parameters. The application is built using Python Flask for the backend, providing a clean, user-friendly web interface for real-time inference.
+This project uses a machine learning model to predict the Average Soil Moisture Level (at 15cm) based on geographical, temporal, and soil parameters. The backend is built using Python Flask with a simple, user-friendly interface for real-time predictions.
 
 Technology Stack
 
-Backend: Python 3.x / Flask
-
-Machine Learning: scikit-learn (Random Forest Regressor)
-
-Data Handling: pandas, joblib (CSV, Pickle files)
-
-Frontend: HTML, Bootstrap, JavaScript
+    Backend: Python 3.x, Flask
+    Machine Learning: scikit-learn (Random Forest)
+    Data Handling: pandas, joblib
+    Frontend: HTML, Bootstrap, JavaScript
 
 Prediction Target
 
-Output: Average Soilmoisture Level (at 15cm)
+    Output: Average Soil Moisture Level (at 15cm)
 
-✨ Key Features
+Key Features
 
-Prediction Interface: A responsive web form to input all 6 required features.
+    Responsive prediction form for 6 required features
 
-Dynamic Dropdowns: State selection automatically filters and populates the District dropdown.
+    Dynamic dropdowns (State → District)
 
-Feature Engineering: Converts human-readable Date (DD-MM-YYYY) into the Unix Timestamp feature required by the model.
+    Auto-conversion of date to Unix timestamp
 
-Data Visualization: A separate dashboard route displays historical time-series data from the input CSV.
+    Dashboard for time-series soil moisture data
 
-⚙️ Model Requirements (The 6 Features)
+Model Requirements (6 Features)
 
-The trained model expects exactly 6 input features in this specific order for correct prediction:
+    Date (Unix Timestamp)
 
-Date: Numeric (Unix Timestamp). Automatically converted from user input.
+    State (Encoded by le_state.pkl)
 
-State: Encoded. Handled by le_state.pkl.
+    District (Encoded by le_district.pkl)
 
-District: Encoded. Handled by le_district.pkl.
+    Average Soil Moisture Volume (15cm)
 
-Average SoilMoisture Volume (15cm): Float. User input.
+    Aggregate Soil Moisture Percentage (15cm)
 
-Aggregate Soilmoisture Percentage (15cm): Float. User input.
+    Volume Soil Moisture Percentage (15cm)
 
-Volume Soilmoisture Percentage (15cm): Float. User input.
+Setup & Run Locally
+Prerequisites:
 
-🚀 Setup and Run Locally
+  Python 3.x
+  Git
+  Local required files:
 
-Follow these instructions to get a copy of the project running on your local machine.
+    soil_moisture_model.pkl
 
-Prerequisites
-
-Python 3.x installed.
-
-Git installed.
-
-Model and Data Files: Ensure you have the following large files locally, as they are ignored by Git and cannot be cloned:
-
-soil_moisture_model.pkl
-
-merged_soil_dataset.csv
+    merged_soil_dataset.csv
 
 Installation Steps
 
-Clone the Repository:
+1. Clone the Repository:
+git clone  https://github.com/geo-cherian-mathew-2k28/Indian-Soil-moisture-prediction-model-.git
+cd Indian-Soil-moisture-prediction-model
 
-git clone [https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git)
-cd YOUR_REPO_NAME
-
-
-Create a Virtual Environment (Recommended):
-
+2. Create Virtual Environment
 python -m venv venv
-source venv/bin/activate   # Linux/macOS
-.\venv\Scripts\activate    # Windows
 
 
-Install Dependencies:
+Activate (Linux/macOS):
 
-# Note: Use the exact scikit-learn version used for training (e.g., 1.6.1)
-pip install Flask pandas numpy joblib scikit-learn==1.6.1
-
-
-Run the Application:
-
-python app.py
+source venv/bin/activate
 
 
-The application will start on your local development server.
+Activate (Windows):
 
-Access the UI: Open your web browser and navigate to the local server address. (This text uses the Blockquote syntax for a background box effect.)
+    .\venv\Scripts\activate
 
-Access URL: http://127.0.0.1:5000/
+3. Install Dependencies
+    pip install Flask pandas numpy joblib scikit-learn==1.6.1
 
-📂 Project Structure
+4. Run the App
+   python app.py
 
-app.py: Main Flask application. Handles routing, data loading, preprocessing, and model inference.
+Access the App
 
-templates/: Contains index.html (prediction form) and dashboard.html.
+Open browser and go to:
 
-static/: Contains styles.css (for styling) and dependent.js (for dynamic dropdowns).
+    http://127.0.0.1:5000/
 
-le_state.pkl: Saved scikit-learn LabelEncoder for State names.
+Project Structure
 
-le_district.pkl: Saved scikit-learn LabelEncoder for District names.
-
-.gitignore: Excludes large files (*.pkl, *.csv) and virtual environments (venv/) from version control.
+app.py — Main Flask backend
+templates/ — index.html (form), dashboard.html
+static/ — styles.css, dependent.js
+le_state.pkl — Encoded state labels
+le_district.pkl — Encoded district labels
+.gitignore — Ignores large files and venv
