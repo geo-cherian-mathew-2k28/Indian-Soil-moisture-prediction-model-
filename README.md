@@ -1,4 +1,4 @@
-**AgroTechz: AI-Powered Soil Moisture Predictor**
+<h1 style="font-size:50px; text-align:center;">AgroTechz: AI-Powered Soil Moisture Predictor</h1>
 ****Project Overview****
 
 This project uses a machine learning model to predict the Average Soil Moisture Level (at 15cm) based on geographical, temporal, and soil parameters. The backend is built using Python Flask with a simple, user-friendly interface for real-time predictions.
