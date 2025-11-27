@@ -41,9 +41,9 @@ Model Requirements (6 Features)
 Setup & Run Locally
 Prerequisites:
 
-  Python 3.x
-  Git
-  Local required files:
+  1.Python 3.x
+  2.Git
+  3.Local required files:
 
     soil_moisture_model.pkl
 
@@ -52,39 +52,41 @@ Prerequisites:
 Installation Steps
 
 1. Clone the Repository:
-git clone  https://github.com/geo-cherian-mathew-2k28/Indian-Soil-moisture-prediction-model-.git
-cd Indian-Soil-moisture-prediction-model
+   
+        git clone  https://github.com/geo-cherian-mathew-2k28/Indian-Soil-moisture-prediction-model-.git
+        cd Indian-Soil-moisture-prediction-model
 
-2. Create Virtual Environment
-python -m venv venv
+3. Create Virtual Environment
+   
+        python -m venv venv
 
+    Activate (Linux/macOS):
+   
+        source venv/bin/activate
+   
+    Activate (Windows):
+   
+        .\venv\Scripts\activate
 
-Activate (Linux/macOS):
+4. Install Dependencies
+   
+         pip install Flask pandas numpy joblib scikit-learn==1.6.1
 
-source venv/bin/activate
-
-
-Activate (Windows):
-
-    .\venv\Scripts\activate
-
-3. Install Dependencies
-    pip install Flask pandas numpy joblib scikit-learn==1.6.1
-
-4. Run the App
-   python app.py
+5. Run the App
+   
+         python app.py
 
 Access the App
 
 Open browser and go to:
 
-    http://127.0.0.1:5000/
+      http://127.0.0.1:5000/
 
 Project Structure
 
-app.py — Main Flask backend
-templates/ — index.html (form), dashboard.html
-static/ — styles.css, dependent.js
-le_state.pkl — Encoded state labels
-le_district.pkl — Encoded district labels
-.gitignore — Ignores large files and venv
+    app.py — Main Flask backend
+    templates/ — index.html (form), dashboard.html
+    static/ — styles.css, dependent.js
+    le_state.pkl — Encoded state labels
+    le_district.pkl — Encoded district labels
+    .gitignore — Ignores large files and venv
