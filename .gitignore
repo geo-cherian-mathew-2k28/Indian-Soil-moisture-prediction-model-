@@ -1,0 +1,24 @@
+Virtual Environment
+
+.venv/
+env/
+venv/
+pycache/
+
+Python specific files
+
+*.pyc
+*.log
+
+Large data and models (Do NOT push these to GitHub)
+
+Your model files are too large for standard Git
+
+soil_moisture_model.pkl
+merged_soil_dataset.csv
+
+Label Encoder files (Keep these small files to be pushed)
+
+le_state.pkl
+
+le_district.pkl
